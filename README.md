@@ -18,6 +18,106 @@
 
 # VoidLinuxInstaller script
 
+TODO:
+I)
+add preset variables like:
+1) Set keyboard layout			......	Keyboard layout: 	fr
+2) Set up internet connection		......	Connection status: 	connected
+
+3) Select destination drive		......	Drive selected: 	/dev/nvme0n1
+4) Wipe destination drive		......	Drive selected: 	/dev/nvme0n1
+5) Partition destination drive		......	Drive selected: 	/dev/nvme0n1
+
+6) Select EFI partition			......	Partition selected: 	/dev/nvme0n1p1
+7) Select ROOT partition		......	Partition selected: 	/dev/nvme0n1p2
+
+8) Set up Full Disk Encryption		......	Encryption: 		YES
+					......	Encrypted partition:	/dev/mapper/LinuxCrypt
+9) Set up Logical Volume Management	......	LVM: 			YES
+					......	LVM partition		/dev/mapper/LinuxGroup-LinuxSystem
+
+10) Set up partition labels: 		......	EFI label		boot
+					......	ROOT label		root
+
+for 11 
+architecture do you want to use:
+1) x86_64
+
+local time and zone and keyboard layout
+swapfile size
+
+user name and password
+default shell
+repor mirror
+
+service-to-enable list
+
+if preset vars run directly the functions
+
+II)
+choose to install pipewire or pulseaudio
+
+III)
+additional package installer
+1)
+lire depuis un fichier package-to-install est installer ces packages
+2)
+pouvoir selectionner plusieurs packages installer avec la spacebar
+3)
+si le package est déjà installer il n'est pas affiché
+
+package-to-install:
+xorg-minimal
+gnome
+gnome-browser-connector
+xdg-user-dirs
+xdg-utils
+pipewire
+alsa-pipewire
+octoxbps
+linux-firmware
+sof-firmware
+mesa-dri
+mesa-vdpau
+mesa-vaapi
+mesa-vulkan-radeon
+mesa-demos
+libva
+libva-vdpau-driver
+glxinfo
+cpupower
+firefox
+firefox-i18n-fr
+zstd
+xz
+zip
+p7zip
+lz4
+bluez
+cups
+cups-filters
+foomatic-db
+foomatic-db-engine
+cronie
+chronyd
+tlp
+tlp-rdw
+noto-fonts-emoji
+noto-fonts-ttf
+socklog-void
+vsv
+
+service-to-enable:
+bluetoothd # bluez
+chronyd # chronyd
+cronie # cronie
+gdm # gnnome
+elogind
+cupsd # cups
+tlp # tlp
+socklog-unix #socklog-void
+nanoklogd # socklog-void
+
 The **VoidLinuxInstaller script** is an attempt to make [my gist](https://gist.github.com/Le0xFF/ff0e3670c06def675bb6920fe8dd64a3) an interactive bash script.
 
 The script is now a much more interactive one, with a hopefully proper menu.
